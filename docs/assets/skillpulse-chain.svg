@@ -1,0 +1,93 @@
+<svg width="1280" height="760" viewBox="0 0 1280 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#202124"/>
+      <stop offset="1" stop-color="#111214"/>
+    </linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.62 0 0 0 0 0.9 0 0 0 0 0.76 0 0 0 0.65 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1280" height="760" rx="28" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1232" height="712" rx="28" fill="#ffffff" fill-opacity="0.07" stroke="#3f4144"/>
+  <rect x="52" y="54" width="36" height="36" rx="11" fill="#31403d" stroke="#90d9bd"/>
+  <text x="104" y="77" fill="#f4f4f4" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">SkillPulse</text>
+  <text x="104" y="103" fill="#adadaf" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14">Codex Skill 使用小记</text>
+  <text x="1082" y="75" fill="#a5a5a8" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14">链路视图</text>
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16" font-weight="600">
+    <rect x="48" y="128" width="180" height="36" rx="10" fill="#2c2d2f" stroke="#4d4e50"/>
+    <rect x="242" y="128" width="180" height="36" rx="10" fill="#2c2d2f" stroke="#4d4e50"/>
+    <rect x="436" y="128" width="180" height="36" rx="10" fill="#2c2d2f" stroke="#4d4e50"/>
+    <rect x="630" y="128" width="180" height="36" rx="10" fill="#444547" stroke="#66686a"/>
+    <rect x="824" y="128" width="180" height="36" rx="10" fill="#2c2d2f" stroke="#4d4e50"/>
+    <rect x="1018" y="128" width="180" height="36" rx="10" fill="#2c2d2f" stroke="#4d4e50"/>
+    <text x="120" y="152" fill="#aeb0b2">总览</text>
+    <text x="300" y="152" fill="#aeb0b2">Skill 库</text>
+    <text x="502" y="152" fill="#aeb0b2">趋势</text>
+    <text x="696" y="152" fill="#f5f5f5">链路</text>
+    <text x="890" y="152" fill="#aeb0b2">维护</text>
+    <text x="1084" y="152" fill="#aeb0b2">设置</text>
+  </g>
+  <rect x="48" y="190" width="1184" height="496" rx="20" fill="#171819" stroke="#343638"/>
+  <text x="76" y="232" fill="#f4f4f4" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">研究选题网络</text>
+  <text x="76" y="260" fill="#b0b2b5" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="15">拖动节点会带动直接邻居，滚轮缩放。节点越大表示调用越多，距离越近表示共现越强。</text>
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13">
+    <rect x="76" y="286" width="82" height="28" rx="14" fill="#9ee6c6" fill-opacity="0.18" stroke="#83d8b7"/>
+    <text x="100" y="305" fill="#eafff6">核心 60</text>
+    <rect x="166" y="286" width="82" height="28" rx="14" fill="#ffffff" fill-opacity="0.08" stroke="#4a4c4f"/>
+    <text x="190" y="305" fill="#c8c9ca">强链路</text>
+    <rect x="258" y="286" width="82" height="28" rx="14" fill="#ffffff" fill-opacity="0.08" stroke="#4a4c4f"/>
+    <text x="282" y="305" fill="#c8c9ca">均衡</text>
+  </g>
+  <g stroke-linecap="round" opacity="0.82">
+    <line x1="520" y1="470" x2="650" y2="390" stroke="#9ee6c6" stroke-width="7"/>
+    <line x1="650" y1="390" x2="760" y2="452" stroke="#9ee6c6" stroke-width="5"/>
+    <line x1="650" y1="390" x2="700" y2="285" stroke="#9ee6c6" stroke-width="4"/>
+    <line x1="520" y1="470" x2="420" y2="530" stroke="#8ec5ff" stroke-width="4"/>
+    <line x1="520" y1="470" x2="560" y2="585" stroke="#8ec5ff" stroke-width="4"/>
+    <line x1="760" y1="452" x2="895" y2="424" stroke="#9ee6c6" stroke-width="4"/>
+    <line x1="760" y1="452" x2="850" y2="565" stroke="#8ec5ff" stroke-width="3"/>
+    <line x1="895" y1="424" x2="980" y2="332" stroke="#b6a4ff" stroke-width="3"/>
+    <line x1="895" y1="424" x2="1038" y2="500" stroke="#b6a4ff" stroke-width="2"/>
+    <line x1="700" y1="285" x2="815" y2="270" stroke="#9ee6c6" stroke-width="3"/>
+    <line x1="420" y1="530" x2="330" y2="455" stroke="#8ec5ff" stroke-width="2"/>
+  </g>
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif" text-anchor="middle" font-weight="700">
+    <g filter="url(#glow)">
+      <circle cx="650" cy="390" r="58" fill="#a9efd0"/>
+      <text x="650" y="468" fill="#f3fff9" font-size="16">研究选题</text>
+    </g>
+    <g filter="url(#glow)">
+      <circle cx="520" cy="470" r="42" fill="#8ec5ff"/>
+      <text x="520" y="530" fill="#e9f4ff" font-size="14">文献检索</text>
+    </g>
+    <g filter="url(#glow)">
+      <circle cx="760" cy="452" r="36" fill="#a9efd0"/>
+      <text x="760" y="506" fill="#f3fff9" font-size="14">方案拆解</text>
+    </g>
+    <circle cx="700" cy="285" r="30" fill="#a9efd0"/>
+    <text x="700" y="330" fill="#e9fff6" font-size="13">科学写作</text>
+    <circle cx="895" cy="424" r="30" fill="#b6a4ff"/>
+    <text x="895" y="470" fill="#f0ecff" font-size="13">统计分析</text>
+    <circle cx="420" cy="530" r="27" fill="#8ec5ff"/>
+    <text x="420" y="572" fill="#e9f4ff" font-size="13">结果验证</text>
+    <circle cx="560" cy="585" r="24" fill="#8ec5ff"/>
+    <text x="560" y="624" fill="#e9f4ff" font-size="12">代码评审</text>
+    <circle cx="850" cy="565" r="22" fill="#8ec5ff"/>
+    <text x="850" y="602" fill="#e9f4ff" font-size="12">图表生成</text>
+    <circle cx="980" cy="332" r="20" fill="#b6a4ff"/>
+    <text x="980" y="368" fill="#f0ecff" font-size="12">数据清理</text>
+    <circle cx="1038" cy="500" r="14" fill="#b6a4ff"/>
+    <circle cx="815" cy="270" r="16" fill="#a9efd0"/>
+    <circle cx="330" cy="455" r="14" fill="#8ec5ff"/>
+  </g>
+  <rect x="920" y="236" width="260" height="92" rx="14" fill="#222326" stroke="#424447"/>
+  <text x="944" y="270" fill="#f3f3f4" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16" font-weight="700">链路摘要</text>
+  <text x="944" y="298" fill="#b7b9bc" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13">最长链路 7 节点 · 强链路 81 条</text>
+  <text x="944" y="320" fill="#b7b9bc" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="13">最常共现：研究选题 → 文献检索</text>
+</svg>

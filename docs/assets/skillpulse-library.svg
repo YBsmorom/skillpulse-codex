@@ -1,0 +1,105 @@
+<svg width="1280" height="760" viewBox="0 0 1280 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#242526"/>
+      <stop offset="1" stop-color="#111214"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="360" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a9efd0"/>
+      <stop offset="1" stop-color="#91c8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="760" rx="28" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1232" height="712" rx="28" fill="url(#glass)" stroke="#3c3d3f"/>
+  <rect x="52" y="54" width="36" height="36" rx="11" fill="#31403d" stroke="#90d9bd"/>
+  <text x="104" y="77" fill="#f4f4f4" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="26" font-weight="700">SkillPulse</text>
+  <text x="104" y="103" fill="#adadaf" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14">Codex Skill 使用小记</text>
+  <text x="1080" y="75" fill="#a5a5a8" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14">已扫描 346 个</text>
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="16" font-weight="600">
+    <rect x="48" y="128" width="180" height="36" rx="10" fill="#2c2d2f" stroke="#4d4e50"/>
+    <rect x="242" y="128" width="180" height="36" rx="10" fill="#444547" stroke="#66686a"/>
+    <rect x="436" y="128" width="180" height="36" rx="10" fill="#2c2d2f" stroke="#4d4e50"/>
+    <rect x="630" y="128" width="180" height="36" rx="10" fill="#2c2d2f" stroke="#4d4e50"/>
+    <rect x="824" y="128" width="180" height="36" rx="10" fill="#2c2d2f" stroke="#4d4e50"/>
+    <rect x="1018" y="128" width="180" height="36" rx="10" fill="#2c2d2f" stroke="#4d4e50"/>
+    <text x="120" y="152" fill="#aeb0b2">总览</text>
+    <text x="300" y="152" fill="#f5f5f5">Skill 库</text>
+    <text x="502" y="152" fill="#aeb0b2">趋势</text>
+    <text x="696" y="152" fill="#aeb0b2">链路</text>
+    <text x="890" y="152" fill="#aeb0b2">维护</text>
+    <text x="1084" y="152" fill="#aeb0b2">设置</text>
+  </g>
+  <rect x="48" y="186" width="1184" height="110" rx="18" fill="#ffffff" fill-opacity="0.07" stroke="#3e4042"/>
+  <text x="74" y="224" fill="#f2f2f3" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="22" font-weight="700">Skill 库</text>
+  <text x="74" y="252" fill="#adadaf" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14">已扫描 346 个，当前显示 346 个。来源：Codex / Agent / 插件缓存。</text>
+  <rect x="756" y="214" width="420" height="38" rx="11" fill="#141516" stroke="#3e4042"/>
+  <text x="776" y="239" fill="#85878a" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="14">搜索 Skill 名、中文说明、英文说明或路径</text>
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="12">
+    <rect x="74" y="266" width="72" height="24" rx="12" fill="#a9efd0" fill-opacity="0.18" stroke="#83d8b7"/>
+    <text x="94" y="283" fill="#e9fff6">全部</text>
+    <rect x="154" y="266" width="72" height="24" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#3e4042"/>
+    <text x="174" y="283" fill="#b7b7ba">用户</text>
+    <rect x="234" y="266" width="72" height="24" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#3e4042"/>
+    <text x="254" y="283" fill="#b7b7ba">Agent</text>
+    <rect x="314" y="266" width="72" height="24" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#3e4042"/>
+    <text x="334" y="283" fill="#b7b7ba">插件</text>
+  </g>
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif">
+    <g transform="translate(48 324)">
+      <rect width="376" height="158" rx="16" fill="#ffffff" fill-opacity="0.08" stroke="#3e4042"/>
+      <text x="18" y="34" fill="#f4f4f4" font-size="18" font-weight="700">研究选题</text>
+      <rect x="102" y="14" width="48" height="24" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#57595c"/>
+      <text x="116" y="31" fill="#c8c9ca" font-size="12">用户</text>
+      <text x="18" y="60" fill="#9b9da0" font-size="13">research-topic-selection</text>
+      <text x="18" y="88" fill="#c5c7c9" font-size="14">辅助拆解研究问题、收敛题目方向和初步可行性。</text>
+      <rect x="18" y="104" width="96" height="22" rx="11" fill="#ffffff" fill-opacity="0.08"/><text x="32" y="120" fill="#c8c9ca" font-size="12">活跃</text>
+      <rect x="122" y="104" width="96" height="22" rx="11" fill="#ffffff" fill-opacity="0.08"/><text x="136" y="120" fill="#c8c9ca" font-size="12">调用 58</text>
+      <rect x="18" y="132" width="72" height="24" rx="8" fill="#ffffff" fill-opacity="0.08" stroke="#55575a"/><text x="40" y="149" fill="#f0f0f0" font-size="12">目录</text>
+      <rect x="98" y="132" width="92" height="24" rx="8" fill="#ffffff" fill-opacity="0.08" stroke="#55575a"/><text x="116" y="149" fill="#f0f0f0" font-size="12">SKILL.md</text>
+      <rect x="198" y="132" width="72" height="24" rx="8" fill="#ffffff" fill-opacity="0.08" stroke="#55575a"/><text x="220" y="149" fill="#f0f0f0" font-size="12">复制</text>
+    </g>
+    <g transform="translate(452 324)">
+      <rect width="376" height="158" rx="16" fill="#ffffff" fill-opacity="0.08" stroke="#3e4042"/>
+      <text x="18" y="34" fill="#f4f4f4" font-size="18" font-weight="700">文献检索</text>
+      <rect x="102" y="14" width="52" height="24" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#57595c"/>
+      <text x="116" y="31" fill="#c8c9ca" font-size="12">Agent</text>
+      <text x="18" y="60" fill="#9b9da0" font-size="13">literature-search</text>
+      <text x="18" y="88" fill="#c5c7c9" font-size="14">适合快速定位论文、数据库记录和引用线索。</text>
+      <rect x="18" y="104" width="96" height="22" rx="11" fill="#ffffff" fill-opacity="0.08"/><text x="32" y="120" fill="#c8c9ca" font-size="12">活跃</text>
+      <rect x="122" y="104" width="96" height="22" rx="11" fill="#ffffff" fill-opacity="0.08"/><text x="136" y="120" fill="#c8c9ca" font-size="12">调用 42</text>
+      <rect x="18" y="132" width="72" height="24" rx="8" fill="#ffffff" fill-opacity="0.08" stroke="#55575a"/><text x="40" y="149" fill="#f0f0f0" font-size="12">目录</text>
+      <rect x="98" y="132" width="92" height="24" rx="8" fill="#ffffff" fill-opacity="0.08" stroke="#55575a"/><text x="116" y="149" fill="#f0f0f0" font-size="12">SKILL.md</text>
+      <rect x="198" y="132" width="72" height="24" rx="8" fill="#ffffff" fill-opacity="0.08" stroke="#55575a"/><text x="220" y="149" fill="#f0f0f0" font-size="12">复制</text>
+    </g>
+    <g transform="translate(856 324)">
+      <rect width="376" height="158" rx="16" fill="#ffffff" fill-opacity="0.08" stroke="#3e4042"/>
+      <text x="18" y="34" fill="#f4f4f4" font-size="18" font-weight="700">完成前验证</text>
+      <rect x="126" y="14" width="48" height="24" rx="12" fill="#ffffff" fill-opacity="0.08" stroke="#57595c"/>
+      <text x="140" y="31" fill="#c8c9ca" font-size="12">插件</text>
+      <text x="18" y="60" fill="#9b9da0" font-size="13">verification-before-completion</text>
+      <text x="18" y="88" fill="#c5c7c9" font-size="14">在收尾前检查是否满足目标、测试和交付要求。</text>
+      <rect x="18" y="104" width="96" height="22" rx="11" fill="#ffffff" fill-opacity="0.08"/><text x="32" y="120" fill="#c8c9ca" font-size="12">活跃</text>
+      <rect x="122" y="104" width="96" height="22" rx="11" fill="#ffffff" fill-opacity="0.08"/><text x="136" y="120" fill="#c8c9ca" font-size="12">调用 37</text>
+      <rect x="18" y="132" width="72" height="24" rx="8" fill="#ffffff" fill-opacity="0.08" stroke="#55575a"/><text x="40" y="149" fill="#f0f0f0" font-size="12">目录</text>
+      <rect x="98" y="132" width="92" height="24" rx="8" fill="#ffffff" fill-opacity="0.08" stroke="#55575a"/><text x="116" y="149" fill="#f0f0f0" font-size="12">SKILL.md</text>
+      <rect x="198" y="132" width="72" height="24" rx="8" fill="#ffffff" fill-opacity="0.08" stroke="#55575a"/><text x="220" y="149" fill="#f0f0f0" font-size="12">复制</text>
+    </g>
+  </g>
+  <g transform="translate(48 512)" font-family="Segoe UI, Microsoft YaHei, sans-serif">
+    <rect width="1184" height="160" rx="18" fill="#ffffff" fill-opacity="0.07" stroke="#3e4042"/>
+    <text x="24" y="40" fill="#f4f4f4" font-size="20" font-weight="700">筛选和排序</text>
+    <text x="24" y="70" fill="#b9bbbe" font-size="15">按来源、活跃状态、重复、缺说明、脚本、参考资料和素材筛选。支持按调用最多、最近使用、名称、来源、修改时间和入口大小排序。</text>
+    <rect x="24" y="100" width="120" height="28" rx="14" fill="#a9efd0" fill-opacity="0.18" stroke="#83d8b7"/>
+    <text x="48" y="119" fill="#e9fff6" font-size="13">可管理 128</text>
+    <rect x="154" y="100" width="120" height="28" rx="14" fill="#ffffff" fill-opacity="0.08" stroke="#3e4042"/>
+    <text x="178" y="119" fill="#c8c9ca" font-size="13">受保护 218</text>
+    <rect x="284" y="100" width="120" height="28" rx="14" fill="#ffffff" fill-opacity="0.08" stroke="#3e4042"/>
+    <text x="308" y="119" fill="#c8c9ca" font-size="13">吃灰 81</text>
+    <rect x="414" y="100" width="120" height="28" rx="14" fill="#ffffff" fill-opacity="0.08" stroke="#3e4042"/>
+    <text x="438" y="119" fill="#c8c9ca" font-size="13">缺说明 23</text>
+  </g>
+</svg>
