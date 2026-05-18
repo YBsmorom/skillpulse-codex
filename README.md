@@ -112,6 +112,8 @@ docs/                 设计说明、发布说明、vibe coding 过程
 
 SkillPulse 是一个公开的 Codex vibe coding 案例。项目从“想要一个 Skill 使用小记/计数器”开始，经由多轮对话不断修正方向、界面、数据口径和交互细节。详细过程见 [docs/vibe-coding-case.md](docs/vibe-coding-case.md)。
 
+更细的公开版交互记录见 [docs/interaction-log.md](docs/interaction-log.md)。这份记录保留产品决策和返工过程，不公开本机私有会话正文、数据库和个人路径细节。
+
 ## 许可证
 
 MIT。见 [LICENSE](LICENSE)。
