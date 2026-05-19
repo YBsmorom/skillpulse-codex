@@ -5,6 +5,7 @@ import type { Theme } from "@tauri-apps/api/window";
 import { useEffect, useMemo, useState } from "react";
 import { IconDock } from "./components/IconDock";
 import { Shell } from "./components/Shell";
+import { demoData, demoSettings } from "./demoData";
 import { formatTime } from "./format";
 import type { AnnotationResultCandidate, DashboardData, SkillPulseSettings } from "./types";
 import { ChainsView } from "./views/ChainsView";
@@ -45,7 +46,20 @@ const EMPTY_DATA: DashboardData = {
 
 const TABS = ["总览", "Skill 库", "趋势", "链路", "维护", "设置"];
 
+function isDemoMode() {
+  return typeof window !== "undefined" && new URLSearchParams(window.location.search).get("demo") === "1";
+}
+
+function demoTab() {
+  if (typeof window === "undefined") return "总览";
+  const tab = new URLSearchParams(window.location.search).get("tab");
+  return tab && TABS.includes(tab) ? tab : "总览";
+}
+
 export default function App() {
+  if (isDemoMode()) {
+    return <PanelApp demoMode />;
+  }
   const currentWindow = getCurrentWindow();
   if (currentWindow.label === "dock") {
     return <IconDock />;
@@ -53,11 +67,11 @@ export default function App() {
   return <PanelApp />;
 }
 
-function PanelApp() {
+function PanelApp({ demoMode = false }: { demoMode?: boolean }) {
   const [data, setData] = useState<DashboardData>(EMPTY_DATA);
   const [settings, setSettings] = useState<SkillPulseSettings | null>(null);
-  const [activeTab, setActiveTab] = useState("总览");
-  const [expanded, setExpanded] = useState(false);
+  const [activeTab, setActiveTab] = useState(() => (demoMode ? demoTab() : "总览"));
+  const [expanded, setExpanded] = useState(demoMode);
   const [busy, setBusy] = useState(false);
   const [status, setStatus] = useState("准备刷新");
   const [theme, setTheme] = useState<Theme | null>(null);
@@ -72,6 +86,11 @@ function PanelApp() {
   }, [busy, data.summary.lastRefresh, status]);
 
   async function loadSettings() {
+    if (demoMode) {
+      setSettings(demoSettings);
+      setAnnotationResultCandidates([]);
+      return;
+    }
     try {
       setSettings(await invoke<SkillPulseSettings>("get_settings"));
       await loadAnnotationResults();
@@ -81,6 +100,10 @@ function PanelApp() {
   }
 
   async function loadAnnotationResults() {
+    if (demoMode) {
+      setAnnotationResultCandidates([]);
+      return;
+    }
     try {
       setAnnotationResultCandidates(await invoke<AnnotationResultCandidate[]>("list_skill_annotation_results"));
     } catch (error) {
@@ -89,6 +112,11 @@ function PanelApp() {
   }
 
   async function refresh() {
+    if (demoMode) {
+      setData(demoData);
+      setStatus(`已刷新 ${formatTime(demoData.summary.lastRefresh)}`);
+      return;
+    }
     setBusy(true);
     setStatus("正在扫描本机 Skill 与会话索引");
     try {
@@ -103,6 +131,10 @@ function PanelApp() {
   }
 
   async function openPath(path: string) {
+    if (demoMode) {
+      setStatus(`演示模式不打开本机路径：${path}`);
+      return;
+    }
     try {
       await invoke("open_path", { path });
     } catch (error) {
@@ -111,6 +143,10 @@ function PanelApp() {
   }
 
   async function exportCsv() {
+    if (demoMode) {
+      setStatus("演示模式不导出本机报告");
+      return;
+    }
     try {
       const path = await invoke<string>("export_usage_csv");
       setStatus(`已导出 CSV：${path}`);
@@ -120,6 +156,10 @@ function PanelApp() {
   }
 
   async function exportJson() {
+    if (demoMode) {
+      setStatus("演示模式不导出本机报告");
+      return;
+    }
     try {
       const path = await invoke<string>("export_usage_json");
       setStatus(`已导出 JSON：${path}`);
@@ -129,6 +169,10 @@ function PanelApp() {
   }
 
   async function setIcon(path: string) {
+    if (demoMode) {
+      setStatus(`演示模式不写入图标设置：${path}`);
+      return;
+    }
     try {
       setSettings(await invoke<SkillPulseSettings>("set_custom_icon_path", { path }));
       setStatus("已设置自定义图标，关闭面板后 dock 会重新读取。");
@@ -138,6 +182,10 @@ function PanelApp() {
   }
 
   async function restoreIcon() {
+    if (demoMode) {
+      setStatus("演示模式不写入图标设置");
+      return;
+    }
     try {
       setSettings(await invoke<SkillPulseSettings>("restore_default_icon"));
       setStatus("已恢复默认图标。");
@@ -147,6 +195,11 @@ function PanelApp() {
   }
 
   async function exportAnnotationRequest() {
+    if (demoMode) {
+      setAnnotationRequestPaths(["C:\\SkillPulse\\Demo\\skill-annotation-request.json"]);
+      setStatus("演示模式已生成示例翻译包路径");
+      return;
+    }
     setBusy(true);
     setStatus("正在生成翻译包");
     try {
@@ -162,6 +215,13 @@ function PanelApp() {
   }
 
   async function exportAnnotationBatches(batchSize: number) {
+    if (demoMode) {
+      setAnnotationRequestPaths(
+        Array.from({ length: 3 }, (_, index) => `C:\\SkillPulse\\Demo\\skill-annotation-request-${index + 1}.json`),
+      );
+      setStatus(`演示模式已按 ${batchSize} 条一批生成示例路径`);
+      return;
+    }
     setBusy(true);
     setStatus("正在分批生成翻译包");
     try {
@@ -181,6 +241,11 @@ function PanelApp() {
       setStatus("请先选择至少 1 个 Skill");
       return;
     }
+    if (demoMode) {
+      setAnnotationRequestPaths(["C:\\SkillPulse\\Demo\\skill-annotation-selected.json"]);
+      setStatus(`演示模式已导出选中 Skill 翻译包：${skillIds.length} 个 Skill`);
+      return;
+    }
     setBusy(true);
     setStatus("正在导出选中的 Skill 翻译包");
     try {
@@ -196,6 +261,11 @@ function PanelApp() {
   }
 
   async function importAnnotationResult(path: string) {
+    if (demoMode) {
+      setData(demoData);
+      setStatus(path.trim() ? "演示模式已导入示例中文备注" : "演示模式已自动导入示例中文备注");
+      return;
+    }
     const confirmed = window.confirm(
       path.trim()
         ? "导入会把翻译结果写入 SkillPulse 本地元数据，并按 id 匹配 Skill。不会修改任何原始 SKILL.md。"
@@ -221,16 +291,22 @@ function PanelApp() {
   async function toggleExpanded() {
     const next = !expanded;
     setExpanded(next);
+    if (demoMode) return;
     await invoke("set_panel_expanded", { expanded: next });
   }
 
   async function closePanel() {
+    if (demoMode) {
+      setStatus("演示模式不关闭页面");
+      return;
+    }
     await invoke("hide_panel");
   }
 
   useEffect(() => {
     void loadSettings();
     void refresh();
+    if (demoMode) return;
 
     const interval = window.setInterval(() => void refresh(), 30 * 60 * 1000);
     let unlisten: (() => void) | undefined;
@@ -241,9 +317,15 @@ function PanelApp() {
       window.clearInterval(interval);
       unlisten?.();
     };
-  }, []);
+  }, [demoMode]);
 
   useEffect(() => {
+    if (demoMode) {
+      document.documentElement.dataset.theme =
+        new URLSearchParams(window.location.search).get("theme") === "light" ? "light" : "dark";
+      setTheme((document.documentElement.dataset.theme as Theme) || "dark");
+      return;
+    }
     const panelWindow = getCurrentWindow();
     let unlistenTheme: (() => void) | undefined;
 
@@ -264,7 +346,7 @@ function PanelApp() {
     return () => {
       unlistenTheme?.();
     };
-  }, []);
+  }, [demoMode]);
 
   return (
     <Shell
